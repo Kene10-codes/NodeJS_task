@@ -5,5 +5,12 @@
     "express-validator": "^6.9.2",
     "mongodb": "^3.6.3",
     "nodemon": "^2.0.7"
-  }
+  },
+  "name": "NodeJS_task",
+  "version": "1.0.0",
+  "description": "NodeJs task for an internship",
+  "main": "index.js",
+  "repository": "https://github.com/keneNwobodo/NodeJS_task.git",
+  "author": "Kenechukwu Nwobodo <nwobodokenechukwu2@gmail.com>",
+  "license": "MIT"
 }
