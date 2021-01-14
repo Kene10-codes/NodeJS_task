@@ -1,9 +1,12 @@
 {
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dot-env": "^0.0.1",
     "express": "^4.17.1",
     "express-validator": "^6.9.2",
+    "mailgun": "^0.5.0",
     "mongodb": "^3.6.3",
+    "mongoose": "^5.11.11",
     "nodemon": "^2.0.7"
   },
   "name": "NodeJS_task",
