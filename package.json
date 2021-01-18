@@ -15,5 +15,9 @@
   "main": "index.js",
   "repository": "https://github.com/keneNwobodo/NodeJS_task.git",
   "author": "Kenechukwu Nwobodo <nwobodokenechukwu2@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+  "start": "nodemon index.js"
+}
+
 }

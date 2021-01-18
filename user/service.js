@@ -11,6 +11,8 @@ class UsersServices {
       email: req.body.email,
       mobile: req.body.mobile
     })
+    //save users
+    users.save()
 
     if (users) {
       return handleResponse(res, 200, 'Sign up was successfuly')
@@ -52,13 +54,10 @@ class UsersServices {
   }
 
   static async updatetUsers(req, res) {
-    const { assessmentId } = req.params
-   
-    const { firstName, lastName } = res.locals.staff
     let data = {}
 
     const updated = await UsersModel.updateOne(
-      { courseId, _id: ObjectId(assessmentId) },
+      {  _id: req.params.id },
       {
         $set: { approved: true }
       },
@@ -71,12 +70,6 @@ class UsersServices {
 
     data = {
       approved: true,
-      assessmentId,
-      courseId,
-      courseName: name,
-      levelId,
-      courseTutor: `${firstName} ${lastName}`,
-      schoolId
     }
 
     const response = data
@@ -86,11 +79,11 @@ class UsersServices {
   static async getUserIdAndDelete(req, res) {
     const { id } = req.params
 
-    const assessments = await AssessmentReportModel.findOne({ _id: ObjectID(id) })
+    const userId = await UsersModel.findOne({ _id: ObjectID(id) })
 
-    if (!assessments) return handleResponse(res, 404, 'assessment reports not found')
+    if (!userId) return handleResponse(res, 404, 'assessment reports not found')
 
-    return handleResponse(res, 200, 'success', assessments)
+    return handleResponse(res, 200, 'success', userId)
   }
 }
 
